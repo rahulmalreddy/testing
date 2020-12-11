@@ -1,0 +1,2242 @@
+                         DATA STRUCTURES:
+                    -------------------------
+
+-> there are four types of operations performed on data structure they are:
+1. Accessiong
+2. Searching.
+3. deleting.
+4. inserting.
+-------------------------------------------------
+                 TIME COMPLEXITY:
+                  ----------------
+
+-> Time Complexity of an algorithm is the representation of the amount of time 
+    required by the algorithm to execute to completion. 
+
+-> By measuring how fast an datastructure can perform each action results in its performance and
+   appropriate use.
+------------------------------------------
+
+Big O :  describes the performance of an algorithm.  Runtime Complxity/ Space Complexity
+
+O(1): constant time
+
+O(n):  the run time of algorithm increases lineraly with increase in data set.:
+        Eg: linear search algortithm
+
+O(n*n)= O(n2):Quadratic : it takes more time to run than linear algorithm
+
+O(logn) : An algorithm runs on logarithmic time slows down after some time
+           and it takes less time than linear time
+         Eg : binary search it breaks array into half and than same
+                1 million / 19 comparrisons.
+        -> we reduce time by half.
+
+O(2n) [2 power n]: exponential  growth is opposite of lograthmic growth.
+
+---------------------------------------------------
+Types of Notations:
+
+-> Big oh Notation (O): It measures the worst case of time complexity or
+                         the algorithm's longest amount of time to complete its operation.
+
+-> Omega Notation (Ω) : It basically describes the best-case scenario which is opposite
+                          to the big o notation.
+                         -> It determines what is the fastest time that an algorithm can run.
+
+-> Theta Notation (θ): The theta notation mainly describes the average case scenarios.
+                       -> It represents the realistic time complexity of an algorithm.
+                       -> It is the formal way to express both the upper bound and 
+                           lower bound of an algorithm running time.
+
+---------------------------------------------------------------
+constant	-	?(1)
+linear	-	?(n)
+logarithmic	-	?(log n)
+n log n	-	?(n log n)
+exponential	-	2?(n)
+cubic	-	?(n3)
+polynomial	-	n?(1)
+quadratic	-	?(n2)
+
+----------------------------------------------------------
+
+-> In order to measure the performance of data structure we have two measurements they are
+
+1. Time complexity
+2. Space complexity.
+
+-> Both of them are measured with Big O notation.
+
+Time Complexity: Time complexity equation works by inserting the size of data set as an integer
+                 n, and returning the number of operations needed to be conducted before 
+                 the function can finish.
+
+Example: if we have an array of size 10 i.e its size of data set n =10 and the Big O for 
+         insertig function is. O(10).
+          Synatx: O(n) -> n represnets data set size
+                  O(n)  -> n represents the operations performed to finish the function.
+
+**: We alaways consider worst case senerio.
+
+
+----------------------------------------------------------------------------------
+
+                         SPACE COMPLEXITY:
+                        -------------------
+
+Space Complexity: Space Complexity of an algorithm is the representation of the amount of
+                  memory required by the algorithm to execute to completion. 
+
+
+-> For any algorithm memory is required for the following puropses:
+
+  * To store program instructions.
+  * To store consatant values
+  * to store variable values
+  * and few other things like function calls, jumping statements etc.
+
+-> Auxilary space: It is the temporary space (excluding the input size)
+                    allocated by your algorithm to solve the problem, with rspect to
+                    the input size.
+
+-> Space complexity: Space complexity includes both auxilary space and space used
+                      by input.
+
+-> space complexity is caluclated iresspective of inputsize.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++
+
+
+
+
+
+
+
+----------------------------------------------
+ ABSTRACT DATA TYPE:
+
+-> array
+
+-> list
+
+-> stack
+
+-> queue
+
+-> tree.
+
+                          DATA STRUCTURES:
+                       -------------------
+
+1. Arrays
+
+2. Dynamic Arrays(ArrayList)
+
+3. LinkedLists
+
+4.  Circular LinkedList
+
+5. Double LinkedList
+
+6. Circular Double Linked List
+
+7. Stack
+
+8. Queue
+
+9. Tree
+
+11. Binary Tree
+
+12. Binary Search Tree
+
+
+
+----------------------------------------------------------------------------------------------
+                                      DATA STRUCTURES:
+ --------------------------------------------------------------------------------------------                               ------------------------
+
+                           ARRAYS:
+                       ---------------
+
+-> Array can be defined as collection of similar data types.
+
+-> Array is an indexed collection of fixed number of homogeneous data elements.
+
+-> size of an array is fixed.
+Syntax: int[] a ={1,2,3,4,5};
+        int[] a = new int[5];
+
+Time Complexity of different operations on Array:
+---------------------------------------------------
+
+Accessing: O(1)
+--------------
+-> In order to access any element of an array it takes one operation.
+
+Searching: O(n)
+-------------
+-> in order to search an element we have to traverse through entire array and the worst case
+   is it is found at end of array.
+
+Inserting: O(n)
+--------------
+-> In order to insert an element in array we have move the element at that posistion and shift
+   it to right 
+
+deleting:  O(n)
+---------------
+-> In order to delete an element in array we have to shift the remaining elements to occupy 
+  the posistion of deleted element.
+
+GOOD AT:
+-------
+
+1. Accesing and retriving
+
+BAD AT:
+--------
+
+1. Inserting and deleting
+
+
+*******************************************************************************************
+
+                           ARRAYLIST:
+                          -------------
+
+-> Array list is a dynamic array i.e the size of an array can increased .
+
+-> the underlying data structure is resizable array
+
+-> duplicate objects are allowed
+
+-> insertion order is preserved
+
+-> heterogenous objects are alowed.
+
+-> arraylist converts primitive types into object using concept called autoboxing.
+
+-> array list uses array as basic archetecture but in case aof array list it consists of index 
+   which gives the refernce to which the object is stored  in memory location.
+
+-> in arraylist the data is not stored contingously but the refernce to the data is stored in
+   contingous order. 
+
+
+  Syntax: ArrayList<integer> a = new ArrayList<integer>();
+
+-> creates an empty arraylist object with initial capacity of 10. if array list reaches its max
+ capacity then a new arraylist object will be created
+
+       new capacity = (current capacity*3/2)+1;
+
+Methods:
+
+1. add() : in order to add element at end of arraylist.
+2. remove(int index) : removes element at specified index.
+3. get(int index): to get elemnt at specified index.
+4. set(int index, E element): to set elemnt at specified index.
+5. clear() : to remove all the elemnts from the arraylist.
+
+
+Sorting elments in arraylist:
+-----------------------------
+
+// Sorting ArrayList in ascending Order   
+Collections.sort(list);  
+
+// Sorting ArrayList in ascending Order   
+// using Collection.sort() method   
+Collections.sort(list, Collections.reverseOrder());   
+
+** all the objects should of same type in array list to sort else it throughs exception.
+
+---------------------------------
+There are following ways to compare two ArrayList in Java:
+--------------------------------------------------------
+
+Java equals() method
+Java removeAll() method
+Java retainAll() method
+Java ArrayList.contains() method
+Java contentEquals() method
+Java Stream interface
+------------------------------------------------------------
+Reverse a arraylist:
+------------------
+
+ Collections.reverse(list);  
+-----------------------------------------------------------------
+
+How to make ArrayList Read Only?:
+------------------------------
+
+    List<String>unmodifiableList= Collections.unmodifiableList(fruitList);  
+
+-> we can able to perform only read operations on list.
+--------------------------------------------------------------------
+
+How to convert arraylist to array:?
+
+   List<String> fruitList = new ArrayList<>();  
+        //adding String Objects to fruitsList ArrayList  
+        fruitList.add("Mango");  
+        fruitList.add("Banana");  
+        fruitList.add("Apple");  
+        fruitList.add("Strawberry");  
+        fruitList.add("Pineapple");  
+        System.out.println("Converting ArrayList to Array" );  
+        String[] item = fruitList.toArray(new String[fruitList.size()]);  
+
+how to convert array to arraylist?
+
+   List<String>l2 = new ArrayList<>();  
+        l2 =  Arrays.asList(item);  
+
+-----------------------------------------------------------------------------------
+
+How to remove duplicates from arraylist?
+
+public class RemoveDuplicateArrayList {   
+    public static void main(String[] args) {  
+        List<String> l = new ArrayList<String>();  
+        l.add("Mango");  
+        l.add("Banana");  
+        l.add("Mango");  
+        l.add("Apple");  
+        System.out.println(l.toString());  
+        Set<String> s = new LinkedHashSet<String>(l);  
+        System.out.println(s);  
+    }  
+}  
+
+-> we have to convert arrylist to set.(linkedhashset)
+
+---------------------------------------------------------------------------------------
+
+Time Complexity of different operations on Array:
+---------------------------------------------------
+
+Accessing: O(1)
+
+Searching: O(n)
+
+inserting: O(n)
+
+deleting : o(n)
+
+
+--------------------------------------------------------------------------------------------
+*****
+Main difference between why use array even though arraylist has same and more features 
+ 
+than array?
+
+-> the reason is array requires less memory to store the data but arraylist is a class 
+  has objects  and in order to store it takes more memory than array.
+
+----------------------------------------------------------------------------------------
+
+
+                                    STACK:
+                               ---------------------
+
+-> The stack is a linear data structure that is used to store the collection of objects. 
+   It is based on Last-In-First-Out (LIFO).
+
+-> The stack data structure has the two most important operations that are push and pop. 
+
+-> The push operation inserts an element into the stack and pop operation removes an0
+    element from the top of the stack.
+
+Syntax:  Stack<type> stk = new Stack<>();  
+
+methods:
+
+-> empty():	boolean	:  The method checks the stack is empty or not.
+
+-> push( item)	:The method pushes (insert) an element onto the top of the stack.
+
+-> pop():       The method removes an element from the top of the stack and returns 
+                  the same element as the value of that function.
+
+-> peek():  The method looks at the top element of the stack without removing it.
+
+-> search(Object o):	int:	The method searches the specified object and
+                              returns the position of the object.
+
+-------------------------------------------------------------
+
+Time complexity:
+----------------
+
+Accesing: O(n) : in order to access elements in stack we have to remove its previuos elemnt
+                  so worst case scenerio it is O(n).
+
+Searching: O(n): In order to search it takes O(n) because if element present at bottom of 
+                  stack.
+
+Inserting: O(1): because we will add at top of stack.
+
+Deleting: O(1) : because we will remove top element.
+
+
+
+                          
+                                    STACK IMPLEMENTATION:
+                             ---------------------------------
+
+-> Dynamic Stack Implementation:
+
+
+
+public class DStack {
+	
+	int capacity=2;
+	
+	int[] stack = new int[capacity];
+	
+	
+	int top =0;
+	
+	public void push(int data) {
+		if(size()==capacity) 
+			expand();
+	
+		stack[top] =data;
+		top++;
+		
+	}
+	
+	private void expand() {
+		int length = size();
+		int[] newStack = new int[capacity*2];
+		System.arraycopy(stack, 0,newStack, 0, length);
+		stack = newStack;
+		capacity*=2;
+		
+		
+	}
+
+	public int pop() {
+		int data ;
+		if(isEmpty()) {
+		System.out.println("stack is empty");
+		}
+		else 
+		top--;
+		data= stack[top];
+		stack[top] = 0;
+		shrink();
+		return data;
+		
+		
+	}
+	private void shrink() {
+		int length = size();
+		if(length <= (capacity/2)/2) {
+			capacity = capacity/2;
+			int[] newStack = new int[capacity];
+			System.arraycopy(stack, 0,newStack, 0, length);
+			stack = newStack;
+		}
+
+		
+	}
+
+	public int peek() {
+		int data ;
+	
+		data= stack[top-1];
+		
+		return data;
+		
+		
+	}
+	
+	public void show() {
+		for(int n: stack) {
+			System.out.print(n);
+		}
+	}
+	public int size() {
+		return top;
+	}
+	
+	public boolean isEmpty() {
+		return top<=0;
+	}
+}
+
+
+
+
+
+
+Note: create a runner class and get an object of Dstack class and use metods of it.
+------------------------------------------------------------------------------------
+
+**********************************************************************************************
+                               QUEUE:
+                     ---------------------------
+
+-> queue is a sequential access datastructure.
+
+-> to add elements from back and remove from front.
+
+-> Java Queue interface orders the element in FIFO(First In First Out) manner. 
+   In FIFO, first element is removed first and last element is removed at last.
+
+->But queue in java is implemented by class priority queue.\
+
+->I am wondering why the default size of a PriorityQueue in Java is 11. 
+
+Syntax:
+        PriorityQueue<String> queue=new PriorityQueue<String>();  
+
+Methods:
+
+boolean add(object)	:It is used to insert the specified element into this queue 
+                         return true upon success.
+
+boolean offer(object)	:It is used to insert the specified element into this queue.
+
+Object remove()	        :It is used to retrieves and removes the head of this queue.
+
+Object poll()	        :It is used to retrieves and removes the head of this queue,
+                          or returns null if this queue is empty.
+Object element()	:It is used to retrieves, but does not remove, the head of this queue.
+
+Object peek()	        :It is used to retrieves, but does not remove, the head of this queue,
+                          or returns null if this queue is empty.
+---------------------------------------------------------
+
+Time Complexity:
+----------------
+
+Accessing: O(n) : if we want to access element at tail we have remove all the elemnts 
+                   in front of it.
+
+Searching :O(n): 
+
+inserting: O(1):
+
+Deleting: O(1):
+
+
+Time Complexity	:
+-----------------
+
+Average Case : (theta):
+-----------------------
+
+Access	    Search	   Insertion      Deletion
+θ(n)	     θ(n)	    θ(1)	     θ(1)
+
+WorstCase : (O):
+------------------
+
+Access	    Search	   Insertion      Deletion
+θ(n)	     θ(n)	    θ(1)	     θ(1)
+
+
+Space Complexity:
+----------------
+
+WorstCase:
+
+O(n)
+
+--------------
+
+
+                                  QUEUE implementation:
+                               ----------------------------
+
+
+public class QueueImplementation {
+
+	int data;
+	int front;
+	int rear;
+	int size;
+	int[] queue = new int[5];
+	
+	public void enqueue(int data)
+	{
+		if(!isFull()) {
+		queue[rear] = data;
+		rear = (rear+1)%5;
+		size = size+1;
+		}
+		else {
+			System.out.print("queue is full");
+		}
+		
+	}
+	
+	public int dequeue() {
+		if(!isEmpty())
+		{
+		int data = queue[front];
+		front = (front+1)%5;
+		size = size-1;
+		}
+		else {
+			System.out.print("queue is empty");
+		}
+		return data;
+		
+	}
+	
+	public void show()
+	{
+		System.out.print("elements are: ");
+		for(int i = 0;i<size;i++) {
+			System.out.print(queue[(front+i)%5]+ " ");
+		}
+	}
+	
+	public int getSize() 
+	{
+		return size;
+	}
+	
+	public boolean isEmpty() {
+		return getSize()==0;
+	}
+	
+	public boolean isFull()
+	{
+		return getSize()==5;
+	}
+	
+
+->
+
+
+
+
+
+----------------------------------------------------------------------------------------
+
+                                 DEQUEUE:
+                              -----------------
+
+
+*******************************************************************************************
+                                   LINKEDLIST
+                               ---------------------
+
+-> linked list is a sequential access linear data structure which consists of node.
+
+-> each node consists of data and refernce(pointer to next node).
+
+-> first node is known as head node and last node is known as tail node.
+
+-> but in java linkedlist uses doubly linkedlist 
+
+-> we can never go backwards in linked list
+
+
+** we can use linked list as backened for stack and queue.
+
+GOOD AT:
+--------
+
+1. Adding new items and deleting new items 
+
+
+BAD AT:
+------
+2. searching and Accessing
+
+
+Time Complexity	:
+-----------------
+
+Average Case : (theta):
+-----------------------
+
+Access	    Search	   Insertion      Deletion
+θ(n)	     θ(n)	    θ(1)	     θ(1)
+
+WorstCase : (O):
+------------------
+
+Access	    Search	   Insertion      Deletion
+θ(n)	     θ(n)	    θ(1)	     θ(1)
+
+
+Space Complexity:
+----------------
+
+WorstCase:
+
+O(n)
+
+                         LINKED LIST IMPLEMENTATION:
+                       -------------------------------
+
+import java.util.ArrayList;
+
+class Node{
+	int data;
+	Node next;
+}
+
+class LinkedList{
+	Node head;
+	
+	
+	
+	
+	
+	public  void insert(int data) {
+		
+		Node node = new Node();
+		node.data= data;
+		node.next= null;
+		
+		if(head==null) {
+			
+			head = node;
+			
+		}
+		else {
+			Node n = head;
+			while(n.next!=null) {
+				n= n.next;
+			}
+			n.next=node;
+		}
+	}
+	
+	
+	public void show() {
+		int count=0;
+		Node node = head;
+		while(node.next!=null) {
+			System.out.println(node.data);
+			node = node.next;
+			count++;
+		}
+		System.out.println(node.data);
+		System.out.println(count+1 +" total no of nodes");
+	}
+	
+	public void insertAtStart(int data) {
+		Node node = new Node();
+		
+		node.data = data;
+		
+		node.next= null;
+
+		node.next= head;
+	
+		head = node;
+		
+		
+	}
+	
+	public void insertAt(int index,int data) {
+		
+		
+		Node node = new Node();
+		node.data= data;
+		node.next= null;
+		if(index==0) {
+			
+			insertAtStart(data);
+			
+		}
+		else {
+		Node n = head;
+		
+			for(int i=0;i<index-1;i++) {
+				
+				n= n.next;
+			}
+			node.next=n.next;
+			n.next=node;
+		}
+		
+		
+	}
+	
+	public void deleteAt(int index) {
+		
+		if(index==0) {
+			head = head.next;
+			
+		}
+		else {
+			Node n =head;
+			Node n1= null;
+			
+			for(int i=0;i<index-1;i++) {
+				n = n.next;
+			}
+			n1= n.next;
+			n.next= n1.next;
+			System.out.println(" "+n1.data);
+			
+			
+		}
+	}
+	
+	
+-------------------------------------------------
+
+
+                         CIRCULAR LINKED LIST
+                      --------------------------
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Node{
+	int data;
+	Node nextNode;
+	public Node(int data) {
+		super();
+		this.data = data;
+	}	
+}
+
+class CircularLinkedList{
+	
+	Node head;
+	Node tail;
+	int size=0;
+	
+	public void add(int data) {
+		Node newNode = new Node( data);
+		if(head==null) {
+			head=newNode;
+			
+		}
+		else {
+			tail.nextNode= newNode;
+			
+		}
+		tail= newNode;
+		tail.nextNode=head;
+		size++;
+		
+	}
+	public void insertAt(int index,int data) {
+		Node node = new Node(data);
+		 if(index<size) {
+		Node n=head;
+		for(int i=0;i<index-1;i++) {
+			n = n.nextNode;
+			 
+		}
+		node.nextNode=n.nextNode;
+		n.nextNode=node;
+		size++;
+		 }
+		 else {
+			tail.nextNode = node;
+			tail = node;
+			tail.nextNode = head;
+		 }
+		 size++;
+		
+	}
+	
+	
+	public boolean check(int data) {
+		Node currentnode =head;
+		if(head==null) {
+		return false;
+	}
+		else {
+			
+		
+		do {
+			if(currentnode.data==data) {
+				return true;
+			}
+			currentnode= currentnode.nextNode;
+		}
+			
+		while(currentnode!=head); {
+			return false;
+		}
+		
+		}
+	}
+
+
+public void display() {
+	if (head==null) {
+		System.out.println("list is empty");
+	}
+	
+	else {
+		Node currentNode = head;
+		
+		do {
+			int data=currentNode.data;
+			System.out.println(data);
+			currentNode = currentNode.nextNode;
+		}
+		
+	
+		while(currentNode!=head); {
+			
+			
+		}
+		
+	}
+	
+	
+}
+
+
+public void reverselist() {
+	ArrayList list = new ArrayList();
+	ArrayList list2 = new ArrayList();
+	if(head==null) {
+		System.out.println("no elements");
+	}
+	
+	else {
+		   Node currentNode = head;
+		do {
+		  int data=	currentNode.data;
+		  list.add(data);
+		  currentNode= currentNode.nextNode;
+		}
+		while(currentNode!=head);{
+			
+		}
+		
+	}
+	Collections.reverse(list);
+	System.out.println(list);
+
+}
+
+public void delete(int data) {
+	
+	Node currentNode= head;
+	
+	if(head!=null) {
+		if(currentNode.data== data) {
+			head= head.nextNode;
+			tail.nextNode=head;
+		}
+		
+		else {
+			do {
+				Node node = currentNode.nextNode;
+				if(node.data==data) {
+					currentNode.nextNode = node.nextNode;
+					
+				}
+				node = currentNode.nextNode;
+			}
+			while(currentNode!=head);{
+				
+			}
+		}
+		
+	}
+	
+}
+
+public void deleetAtEnd() {
+	
+	if(head==null) {
+		return;
+	}
+	else {
+		if(head!=null) {
+	Node currentNode = head;
+	
+	
+while(currentNode.nextNode!=tail) {
+	currentNode = currentNode.nextNode;
+	System.out.println(currentNode.data);
+}
+	
+	
+	System.out.println("tt");
+	tail = currentNode;
+	tail.nextNode=head;
+		}
+		else {
+			head = tail =null;
+		}
+}
+}
+}
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+
+                         DOUBLY LINKED LIST:
+                      -------------------------
+
+->a DOUBLY LINKED LIST IS A SEQUENTIAL access datastructure which stores data in the form of
+   nodes
+
+-> each node consists of data , previous pointer, next pointer.
+
+-> the diiference between linked lista nd doubly linked list is we can go backwards in doubly]
+   linked list.
+
+Time complexty:
+-----------------
+Accessing: O(n):
+
+Searching: O(n):
+
+inserting :O(n) : if we want to insert in middle O(1) if we want to insert at head or tale.
+
+deleting: O(n)  and O(1).
+
+
+
+
+                            Double Linked List Implementation:
+                             -----------------------------------
+
+
+class Node{
+	int data;
+	Node Next;
+	Node Previous;
+	public Node(int data) {
+		super();
+		this.data = data;
+	}
+	
+}
+
+class DoubleLinked{
+	
+	Node head;
+	Node tail;
+	int size=0;
+	
+	public void add(int data) {
+		
+		Node node = new Node(data);
+		
+		if(head==null) {
+			head= tail = node;
+			head.Next = null;
+			head.Previous = null;
+		}
+		else {
+			tail.Next = node;
+			node.Previous = tail;
+			tail = node;
+		}
+		
+		size++;
+		
+	}
+	
+	public void addFirst(int data){
+		
+		Node node = new Node(data);
+		head.Previous = node;
+		node.Next = head;
+		head= node;
+		size++;
+		
+	}
+	public void addAt(int index, int data) {
+		Node n = new Node(data);
+		Node temp = null;
+		if(head==null) {
+			head=n;
+			n.Next  = null;
+			n.Previous = null;
+		}
+		else {
+			if(index == 0) {
+			head.Previous = n;
+			
+			n.Next = head;
+			head = n;
+		       } 
+			
+			else {
+				
+			
+			if(index ==size) {
+				tail.Next = n;
+				n.Previous  = tail;
+				tail =n;
+			}
+			else {
+				Node node= head;
+				for(int i = 0;i<index-1;i++) {
+					node = node.Next;
+				}
+		       temp = node.Next;
+		       temp.Previous = node;
+		       
+		       node.Next = n;
+		       n.Previous = node;
+		       n.Next = temp;
+		       temp.Previous = n;
+		     	
+			}
+		}
+		}
+		
+		size++;
+	}
+	
+	
+	
+	public void show() {
+		Node node = head;
+		if(head== null) {
+			System.out.println("list is empty");
+		}
+		 System.out.println("Nodes of doubly linked list: ");  
+		while(node!=null) {
+			System.out.println(node.data);
+			node = node.Next;
+		}
+	}
+	public void deleteFirst() {
+		if(head==null) {
+			System.out.println("List is empty");
+		}
+		else {
+			if(head!=tail) {
+				head= head.Next;
+				head.Previous=null;
+			}
+			else {
+				head= tail=null;
+			}
+		}
+		
+		size--;
+	}
+	
+	public void removeDuplicates() {
+		Node node = head;
+		LinkedHashSet<Integer> list2 = new LinkedHashSet<Integer>();
+		for(int i= 0;i<size;i++) {
+			list2.add(node.data);
+			node = node.Next;
+		}
+		for(int i :list2) {
+			System.out.println(i);
+		}
+		
+	}
+	
+
+	public void deleteLast() {
+		
+		if(head==null) {
+			System.out.println("list is empty");
+		}
+		else {
+			if(head!=tail) {
+				tail = tail.Previous;
+				tail.Next = null;
+			}
+			else {
+				head= tail= null;
+			}
+			
+		}
+		size--;
+	}
+	
+	public void length() {
+		System.out.println(size);
+	}
+	
+	public void deleteAt(int index) {
+		Node n= head;
+		
+		if(index==0) {
+			head = head.Next;
+		}
+		else if(index==size) {
+			tail = tail.Previous;
+	          	}
+			 else {
+	              for(int i=0;i<index;i++) {
+		           n= n.Next;
+		   
+	              }
+	              n.Previous.Next = n.Next;
+	              n.Next.Previous= n.Previous;
+			}
+		size--;
+		}
+	}
+	
+
+
+
+                             Circular Double Linked List:
+                            --------------------------------
+
+class Node{
+	int data;
+	Node next;
+	Node previous;
+	public Node(int data) {
+		super();
+		this.data = data;
+	}
+	
+	
+}
+ class CircularDoubleLinkedList{
+	Node head;
+	Node tail;
+	int size;
+	
+	public void add(int data) {
+		Node newNode = new Node(data);
+		if (head==null) {
+			head= newNode;
+			
+		}
+		else {
+			tail.next = newNode;
+			
+		}
+		tail = newNode;
+		tail.next = head;
+		size++;
+		
+	}
+	
+	
+	public void show() {
+		Node n = head;
+		
+		do {
+			int datas = n.data;
+			System.out.println(datas);
+			n = n.next;
+		}
+		while(n!=head) ;{
+			
+		}
+	}
+}
+
+
+-----------------------------------------------------------------------------------------
+
+                            DICTIONARY // MAPS
+                       ------------------------------
+
+-> dictionary and maps are same datastructures which are used to store objects
+
+-> they use key value pair to store the elements.
+
+-> Basically dictionary/maps consists of key value pairs where eah key is unique.
+
+-> each key and value should be unique.
+
+**In java dictionaries are known as maps .
+
+-> working:
+
+It mainly consists of two parts one is hashfuction and hashtable
+
+hashfunction : with the help of key we generte hash code and with futher mathematical equation
+               we generate index
+
+Hashtable: with the generated insdex it is store in hash table.
+
+step1: using key given by user with the help of hashfunction the  computer generates hash code
+
+Step2: now we have to index dictinaries/maps using the keys instead of indexes
+
+i.e each key is associated with one index.
+
+step3: if we have two hashcode same then we use concept of linked list.
+
+
+Time complexity:
+worst case Secenerio:
+-------------------
+
+Accessing: O(n):
+
+Searching: O(n):
+
+inserting: O(n):
+
+deleting: O(n):
+
+
+Average case Scenerio:
+---------------------
+
+Accessing: O(1):
+
+Searching: O(1):
+
+inserting: O(1):
+
+deleting: O(1):
+
+
+GOOD AT:
+-------
+
+1. accesing , inserting, deleting ,searching
+
+BAD AT:
+---------
+
+1. HASH collisions
+---------------------------------------------------------------------------------------------
+                                    TREE 
+                         -------------------------
+
+-> trees store data hierarchly instead of lineraly.
+
+-> Tree is an abstract data structure which consists of series of linked nodes connected
+   together to form a hierarchial representation of information
+
+-> Vertice            :a node in a tree.
+-> Edge               :connection between two nodes
+-> RootNode:          :Top most node of tree.
+-> ChildNode          :A node which has its its edge connecting to another node on the level
+                       above it.
+-> ParentNode:        :Any node which has one or more than one node connecting to it.
+-> LeafNode           :Any node which does not have any child node to it.
+
+Height: Number of edges on the longest possible path from root node to leaf node.
+
+Depth: Number of edges required to get from that particular node to root node is known as Depth
+
+
+Tree Data Structute has different types:
+------------------------------------------
+
+1. Binary Tree: A tree is said to be binary tree if it has at most two child nodes.
+                   
+
+
+1.  BinarySearch Tree : Binary searhc tree is simple variation from standarad tree.It
+                             has three restrictions they are.
+                               1.A node can have at most child nodes
+                               2. For any parent node the left child should be less than 
+                                  parent node and right node should be grater than parent node or
+                                  equal to itself
+                               3.No two nodes should be equal.
+
+2. Tries : A trie is a tree like data structure whose nodes store letters of an alphabet in
+           the form of characters.
+ -> mainly used for auto correct and aautotype.
+
+
+3. Heaps: 
+
+MinHeap: The value of root node must be minimum amongst all of its child nodes
+-> if the child node is smaller tha parent node it uses mechanish hepaify to 
+   swap betwen child node and parent node.
+
+MaxHeap: the value of toor node must be maximum among all of its child nodes
+
+
+
+
+
+
+
+
+
+***************************************************************************************
+
+                                        BINARY TREE:
+                                     --------------------
+
+-> Each node can have at most two children.
+
+-> A binary tree is called strict/proper binary tree when each node has 2 or 0 children.
+
+-> Complete binary tree:
+       All levels except  possibly the last are completely filled and all nodes are as left 
+       as possible// In perfect binary tree all levels are completely filled.
+
+-> MAx nodes at level i is  = 2i  ->( 2 to power i);
+
+->Max number of nodes in a  tree with height h.   in perfect binary tree.
+
+  2 to power(no of levels)-1        no of levels +1;
+
+->
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**************************************************************************************
+
+                         BINARY SEARCH TREE:
+
+1.  BinarySearch Tree : Binary searhc tree is simple variation from standarad tree.It
+                             has three restrictions they are.
+                               1.A node can have at most child nodes
+                               2. For any parent node the left child should be less than 
+                                  parent node and right node should be grater than parent node or
+                                  equal to itself
+                               3.No two nodes should be equal.
+
+
+                            Binary search tree implementation
+                           ----------------------------------
+
+
+package BinarySearchTreeDataStructure;
+
+class Node { 
+    int data; 
+    Node left, right; 
+
+    public Node(int data){ 
+       this. data = data; 
+        left = right = null; 
+    } 
+}
+public class BinarySearchTree1 {
+	
+	 Node root;
+ 
+	 public void insert(int data)
+	 {
+		 root = insert_Recursive(root, data);
+	 }
+	private Node insert_Recursive(Node root, int data) {
+		
+		if(root == null) {
+			root = new Node(data);
+			return root;
+		}
+		if(data<root.data)
+			root.left=insert_Recursive(root.left,data);
+		
+		else if(data>root.data)
+			root.right=insert_Recursive(root.right, data);
+		return root;
+	}
+	
+	
+	
+	public boolean delete(int data)
+	{
+		root = deleteNode(root,data);
+		
+		if (root.data!=data)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+private Node deleteNode(Node root, int data) {
+	
+	   if(root == null)
+	   {
+		   return null;
+	   }
+	   else 
+	   {
+		   if(data<root.data)
+		   {
+			   root.left = deleteNode(root.left,data);
+		   }
+		   else if(data>root.data)
+		   {
+			   root.right = deleteNode(root.right,data);
+		   }
+		   else
+		   { 
+			   if(root.left == null&root.right ==null)
+			   {
+				   root = null;
+			   }
+			   else if(root.left == null)
+			   {
+				root = root.right;   
+			   }
+			   else if(root.right == null)
+			   {
+				   root = root.left;
+			   }
+			   else
+			   {
+				   Node temp = minValue(root.right);
+				   root.data = temp.data;
+				   
+				   root.right = deleteNode(root.right,data);
+			   }
+		   }
+	   }
+		
+		return root;
+	}
+	
+private Node minValue(Node root) {
+
+	if(root.left!=null)
+	{
+		root.left = minValue(root.left);
+	}
+	
+return root;
+}
+	
+
+
+	public  void inorder() { 
+	        inorder_Recursive(root); 
+	    } 
+	   
+	    // recursively traverse the BST  
+	   private  void inorder_Recursive(Node root) { 
+	        if (root != null) { 
+	            inorder_Recursive(root.left); 
+	            System.out.print(root.data + " "); 
+	            inorder_Recursive(root.right); 
+	        } 
+	    } 
+	   public  void postOrder() { 
+		   Postorder_Recursive(root); 
+	    } 
+	   
+	    // recursively traverse the BST  
+	   private  void Postorder_Recursive(Node root) { 
+	        if (root != null) { 
+	        	Postorder_Recursive(root.left); 
+	           
+	            Postorder_Recursive(root.right); 
+	            System.out.print(root.data + " "); 
+	        } 
+	    } 
+	   
+	   public void preorder()
+	   {
+		   preorder_Recursive(root);
+	   }
+	   
+	   private Node preorder_Recursive(Node root)
+	   {
+		   if(root!=null)
+		   {
+			   System.out.print(root.data + " "); 
+			   
+			  root.left= preorder_Recursive(root.left);
+			  root.right= preorder_Recursive(root.right);
+			  
+		   }
+		   return root;
+	   }
+	   
+	   public boolean search(int data)
+	   {
+
+		   root = search_Recurssive(root, data);
+
+		   if(root!= null) {
+			   return true;
+		   }
+		   else
+			   return false;
+	   }
+	 private Node search_Recurssive(Node root, int data) {
+		
+          if(root == null||root.data == data )
+       
+        	  return root;
+          
+          if(root.data> data)
+          
+        	return search_Recurssive(root.left,data);
+          
+         
+        	  return search_Recurssive(root.right, data);
+         
+       
+         
+	}
+	public int min_value() {
+		 
+		 int minvalue = root.data;
+		 
+		 while(root.left!=null) {
+			 minvalue = root.left.data;
+			 root = root.left;
+		 }
+		 return minvalue;
+	 }
+	 public int max_value()
+	 {
+		 int maxvalue = root.data;
+		 while(root.right!=null)
+		 {
+			 maxvalue = root.right.data;
+			  root = root.right;
+		 }
+		 return maxvalue;
+	 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************************************
+                                         ALGORITHMS
+                                  -------------------------
+
+         LINEAR SEARCH:
+        -------------------
+
+-> A linear search scans one item at a time, without jumping to any item .
+
+TIME COMPLEXITY:
+----------------
+
+-> WORST CASE:  O(n):
+-> AVERAGE CASE: O(n)
+-> BEST CASE: O(1)
+
+SPACE COMPLEXITY:
+-----------------
+Space Complexity of an algorithm denotes the total space used or needed by the 
+algorithm for its working, 
+
+Space complexity: O(1)
+
+
+ALGORITHM:
+------------
+
+public class LinearSearchExample{    
+public static int linearSearch(int[] arr, int key){    
+        for(int i=0;i<arr.length;i++){    
+            if(arr[i] == key){    
+                return i;    
+            }    
+        }    
+        return -1;    
+    }    
+    public static void main(String a[]){    
+        int[] a1= {10,20,30,50,70,90};    
+        int key = 50;    
+        System.out.println(key+" is found at index: "+linearSearch(a1, key));    
+    }    
+}   
+
+-------------------------------------------------------------------------------------
+                                BINARY SEARCH:
+                              ---------------------
+-> the search algorithm works on the principle of divide and conquer.
+
+-> Binary search looks for a particular item by comparing the middle most item of the 
+collection. If a match occurs, then the index of item is returned. If the middle item
+is greater than the item, then the item is searched in the sub-array to the left
+of the middle item. Otherwise, the item is searched for in the sub-array to the right
+of the middle item. This process continues on the sub-array as well until the size of 
+the subarray reduces to zero.
+
+
+Time complexity: 
+----------------
+
+-> WORST CASE:  O(log n):
+-> AVERAGE CASE: O(log n)
+-> BEST CASE: O(1)
+
+SPACE COMPLEXITY: O(1)
+-----------------
+
+ALGORITHM:
+
+ackage codes;
+// binary seaerch
+
+
+
+public class BinarySearch {
+	public static void main(String[] args) {
+		int[] arr= {2,3,4,5,7,8,9};
+		int search=3;
+		int li=0;
+		int hi=arr.length-1;
+		int mi=(li+hi)/2;
+		
+	while(li<=hi) { 
+		if(arr[mi]==search)
+		{
+			System.out.println("element is found at "+mi);
+			break;
+		}
+		  else if(arr[mi]<search)
+		    {
+			li=mi+1;	
+		    }
+		       else 
+		       {
+		     	hi=mi-1;
+		        }
+		mi=(li+hi)/2;
+	    }
+	  
+	if(li>hi) {
+		System.out.println("element is not found");
+	}
+
+}
+}
+
+
+
+****************************************************************************************
+----------------------------------------------------------------------------------------------
+                              SORTING:
+                     -------------------------------
+
+-------------------------------------------------------------------------------------------
+                                BUBBLE SORT:
+                               ----------------
+              
+
+Space Complexity:	O(1)
+----------------
+
+Time colmplexity:
+-----------------
+
+-> Worst case running time   :O(n2) -> n square:->(n*n)
+-> Average case running time :theta(n)
+-> Best case running time    :omega(n2)
+                          
+ALGORITHM:
+
+public class BubbleSortExample {  
+    static void bubbleSort(int[] arr) {  
+        int n = arr.length;  
+        int temp = 0;  
+         for(int i=0; i < n; i++){  
+                 for(int j=1; j < (n-i); j++){  
+                          if(arr[j-1] > arr[j]){  
+                                 //swap elements  
+                                 temp = arr[j-1];  
+                                 arr[j-1] = arr[j];  
+                                 arr[j] = temp;  
+                         }  
+                          
+                 }  
+         }  
+  
+    }  
+    public static void main(String[] args) {  
+                int arr[] ={3,60,35,2,45,320,5};  
+                 
+                System.out.println("Array Before Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+                System.out.println();  
+                  
+                bubbleSort(arr);//sorting array elements using bubble sort  
+                 
+                System.out.println("Array After Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+   
+        }  
+}  
+
+
+-------------------------------------------------------------------------------------------
+                           
+                                 
+
+  
+*************************************************************************************
+                                 SELECTION SORT:
+                             --------------------------
+
+-> selection sort is combination of both sorting and searching.
+
+
+Space Complexity:	O(1)
+----------------
+
+Time colmplexity:
+-----------------
+
+-> Worst case running time   : O(n*n) :n square
+-> Average case running time : theta(n*n) : nsquare
+-> Best case running time    : omega(n )
+
+Algorithm:
+-------------
+
+class SelectionSort
+{
+    void sort(int arr[])
+    {
+        int n = arr.length;
+ 
+        // One by one move boundary of unsorted subarray
+        for (int i = 0; i < n-1; i++)
+        {
+            // Find the minimum element in unsorted array
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+
+                 // for strings: arr[j].compareTo(arr[min]<0);s
+                    min_idx = j;
+ 
+            // Swap the found minimum element with the first
+            // element
+            int temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+ 
+    // Prints the array
+    void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+    }
+ 
+    // Driver code to test above
+    public static void main(String args[])
+    {
+        SelectionSort ob = new SelectionSort();
+        int arr[] = {64,25,12,22,11};
+        ob.sort(arr);
+        System.out.println("Sorted array");
+        ob.printArray(arr);
+    }
+}
+
+
+
+*************************************************************************************
+                                      INSERTION SORT:
+                                     ------------------
+
+
+Space Complexity:	O(1)
+----------------
+
+Time colmplexity:
+-----------------
+
+-> Worst case running time   : O(n*n)  : n square
+-> Average case running time : theta(n*n): nsquare
+-> Best case running time    : omega(n )
+
+Algorithm:
+-------------
+
+class InsertionSort { 
+    /*Function to sort array using insertion sort*/
+    void sort(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i = 1; i < n; ++i) { 
+            int key = arr[i]; 
+            int j = i - 1; 
+  
+            /* Move elements of arr[0..i-1], that are 
+               greater than key, to one position ahead 
+               of their current position */
+            while (j >= 0 && arr[j] > key) { 
+                arr[j + 1] = arr[j]; 
+                j = j - 1; 
+            } 
+            arr[j + 1] = key; 
+        } 
+    } 
+  
+    /* A utility function to print array of size n*/
+    static void printArray(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i = 0; i < n; ++i) 
+            System.out.print(arr[i] + " "); 
+  
+        System.out.println(); 
+    } 
+  
+    // Driver method 
+    public static void main(String args[]) 
+    { 
+        int arr[] = { 12, 11, 13, 5, 6 }; 
+  
+        InsertionSort ob = new InsertionSort(); 
+        ob.sort(arr); 
+  
+        printArray(arr); 
+    } 
+
+
+****************************************************************************************
+                                 MERGE SORT:
+                           ----------------------
+
+
+-> merge sort uses technique divide and conquer to sort the elements.
+
+
+Space Complexity:	O(n)
+----------------
+
+Time colmplexity:
+-----------------
+
+-> Worst case running time   : O(n log n)
+-> Average case running time : theta(n log n)
+-> Best case running time    : omega(n log n)
+                          
+
+Algorithm:
+------------
+
+public class MyMergeSort  
+{  
+void merge(int arr[], int beg, int mid, int end)  
+{  
+  
+int l = mid - beg + 1;  
+int r = end - mid;  
+  
+intLeftArray[] = new int [l];  
+intRightArray[] = new int [r];  
+  
+for (int i=0; i<l; ++i)  
+LeftArray[i] = arr[beg + i];  
+  
+for (int j=0; j<r; ++j)  
+RightArray[j] = arr[mid + 1+ j];  
+  
+  
+int i = 0, j = 0;  
+int k = beg;  
+while (i<l&&j<r)  
+{  
+if (LeftArray[i] <= RightArray[j])  
+{  
+arr[k] = LeftArray[i];  
+i++;  
+}  
+else  
+{  
+arr[k] = RightArray[j];  
+j++;  
+}  
+k++;  
+}  
+while (i<l)  
+{  
+arr[k] = LeftArray[i];  
+i++;  
+k++;  
+}  
+  
+while (j<r)  
+{  
+arr[k] = RightArray[j];  
+j++;  
+k++;  
+}  
+}  
+  
+void sort(int arr[], int beg, int end)  
+{  
+if (beg<end)  
+{  
+int mid = (beg+end)/2;  
+sort(arr, beg, mid);  
+sort(arr , mid+1, end);  
+merge(arr, beg, mid, end);  
+}  
+}  
+public static void main(String args[])  
+{  
+intarr[] = {90,23,101,45,65,23,67,89,34,23};  
+MyMergeSort ob = new MyMergeSort();  
+ob.sort(arr, 0, arr.length-1);  
+  
+System.out.println("\nSorted array");  
+for(int i =0; i<arr.length;i++)  
+{  
+    System.out.println(arr[i]+"");  
+}  
+}  
+}  
+
+************************************************************************************
+
+                               QUICK SORT// partition exchange sort
+                         -----------------------
+
+-> works on divide and conquer rule:
+
+Space Complexity:	O(logn)
+----------------
+
+Time colmplexity:
+-----------------
+
+-> Worst case running time   : O(n*n)-> n square
+-> Average case running time : theta(n log n)
+-> Best case running time    : O(n) for 3 way partition or O(n log n) simple partition
+
+
+ALGORITHM:
+
+class QuickSort 
+{ 
+    /* This function takes last element as pivot, 
+       places the pivot element at its correct 
+       position in sorted array, and places all 
+       smaller (smaller than pivot) to left of 
+       pivot and all greater elements to right 
+       of pivot */
+    int partition(int arr[], int low, int high) 
+    { 
+        int pivot = arr[high];  
+        int i = (low-1); // index of smaller element 
+        for (int j=low; j<high; j++) 
+        { 
+            // If current element is smaller than or 
+            // equal to pivot 
+            if (arr[j] <= pivot) 
+            { 
+                i++; 
+  
+                // swap arr[i] and arr[j] 
+                int temp = arr[i]; 
+                arr[i] = arr[j]; 
+                arr[j] = temp; 
+            } 
+        } 
+  
+        // swap arr[i+1] and arr[high] (or pivot) 
+        int temp = arr[i+1]; 
+        arr[i+1] = arr[high]; 
+        arr[high] = temp; 
+  
+        return i+1; 
+    } 
+  
+  
+    /* The main function that implements QuickSort() 
+      arr[] --> Array to be sorted, 
+      low  --> Starting index, 
+      high  --> Ending index */
+    void sort(int arr[], int low, int high) 
+    { 
+        if (low < high) 
+        { 
+            /* pi is partitioning index, arr[pi] is  
+              now at right place */
+            int pi = partition(arr, low, high); 
+  
+            // Recursively sort elements before 
+            // partition and after partition 
+            sort(arr, low, pi-1); 
+            sort(arr, pi+1, high); 
+        } 
+    } 
+  
+    /* A utility function to print array of size n */
+    static void printArray(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i=0; i<n; ++i) 
+            System.out.print(arr[i]+" "); 
+        System.out.println(); 
+    } 
+  
+    // Driver program 
+    public static void main(String args[]) 
+    { 
+        int arr[] = {10, 7, 8, 9, 1, 5}; 
+        int n = arr.length; 
+  
+        QuickSort ob = new QuickSort(); 
+        ob.sort(arr, 0, n-1); 
+  
+        System.out.println("sorted array"); 
+        printArray(arr); 
+    } 
+} 
+
+
+
+***************************************************************************************
+                            HEAP SORT
+                       ------------------
+
+
+
+Space Complexity:	O(1)
+----------------
+
+Time colmplexity:
+-----------------
+
+-> Worst case running time   : O(n log (n))
+-> Average case running time : θ(n log (n))
+-> Best case running time    : Ω(n log (n))
+
+
+ALGORITHM:
+
+// Java program for implementation of Heap Sort 
+public class HeapSort 
+{ 
+    public void sort(int arr[]) 
+    { 
+        int n = arr.length; 
+  
+        // Build heap (rearrange array) 
+        for (int i = n / 2 - 1; i >= 0; i--) 
+            heapify(arr, n, i); 
+  
+        // One by one extract an element from heap 
+        for (int i=n-1; i>=0; i--) 
+        { 
+            // Move current root to end 
+            int temp = arr[0]; 
+            arr[0] = arr[i]; 
+            arr[i] = temp; 
+  
+            // call max heapify on the reduced heap 
+            heapify(arr, i, 0); 
+        } 
+    } 
+  
+    // To heapify a subtree rooted with node i which is 
+    // an index in arr[]. n is size of heap 
+    void heapify(int arr[], int n, int i) 
+    { 
+        int largest = i;  // Initialize largest as root 
+        int l = 2*i + 1;  // left = 2*i + 1 
+        int r = 2*i + 2;  // right = 2*i + 2 
+  
+        // If left child is larger than root 
+        if (l < n && arr[l] > arr[largest]) 
+            largest = l; 
+  
+        // If right child is larger than largest so far 
+        if (r < n && arr[r] > arr[largest]) 
+            largest = r; 
+  
+        // If largest is not root 
+        if (largest != i) 
+        { 
+            int swap = arr[i]; 
+            arr[i] = arr[largest]; 
+            arr[largest] = swap; 
+  
+            // Recursively heapify the affected sub-tree 
+            heapify(arr, n, largest); 
+        } 
+    } 
+  
+    /* A utility function to print array of size n */
+    static void printArray(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i=0; i<n; ++i) 
+            System.out.print(arr[i]+" "); 
+        System.out.println(); 
+    } 
+  
+    // Driver program 
+    public static void main(String args[]) 
+    { 
+        int arr[] = {12, 11, 13, 5, 6, 7}; 
+        int n = arr.length; 
+  
+        HeapSort ob = new HeapSort(); 
+        ob.sort(arr); 
+  
+        System.out.println("Sorted array is"); 
+        printArray(arr); 
+    } 
+} 
+
+****************************************************************************************
+
+
