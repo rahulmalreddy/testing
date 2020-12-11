@@ -1,0 +1,424 @@
+                        NORMALIZATION:
+                  -------------------------
+-> Normalization is a process of organizing the data in database to avoid data redundancy, 
+   insertion anomaly, update anomaly & deletion anomaly. 
+
+Normalization:
+----------------
+
+First normal form(1NF)
+Second normal form(2NF)
+Third normal form(3NF)
+Boyce & Codd normal form (BCNF)
+
+
+First normal form(1NF):
+
+-> an attribute (column) of a table cannot hold multiple values. It should hold only 
+   atomic values.
+
+Second normal form(2NF):
+
+-> should satisfy 1nf rules.
+-> There should be no Partial Dependency.
+// No non-prime attribute is dependent on the proper subset of any candidate key of table.
+
+Third normal form(3NF):
+
+ -> Table must be in 2NF
+ -> Transitive functional dependency of non-prime attribute on any super key should be 
+   removed.  
+ -> no transitive dependency.// When an indirect relationship causes functional dependency
+                                  it is called Transitive Dependency.
+
+Boyce & Codd normal form (BCNF):
+
+-> This form deals with certain type of anomaly that is not handled by 3NF
+
+->  must be in 3rd Normal Form
+
+-> and, for each functional dependency ( X → Y ), X should be a super Key.
+
+
+--------------------------------------------------------
+Candiadte Key : the minimal set of attributes which can uniquely identify a tuple is 
+                known as candidte key.
+
+primary key:  A primary is a column or set of columns in a table that uniquely identifies 
+             tuples (rows) in that table.
+
+Super Key – A super key is a set of one of more columns (attributes) to uniquely 
+            identify rows in a table.
+
+Candidate Key – A super key with no redundant attribute is known as candidate key
+
+Alternate Key – Out of all candidate keys, only one gets selected as primary key, 
+               remaining keys are known as alternate or secondary keys.
+
+Composite Key – A key that consists of more than one attribute to uniquely identify 
+               rows (also known as records & tuples) in a table is called composite key.
+
+Foreign Key – Foreign keys are the columns of a table that points to the primary key 
+            of another table. They act as a cross-reference between tables.
+
+
+
+
+
+-----------------------------------------------------------------------------------
+
+  SET Command:
+
+-> set command is used for updating records and also as a variable:
+
+Eg:
+
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+
+And As variable: 
+
+Eg: 
+SET @r1=0, @r2=0, @r3 =0, @r4=0;
+
+-------------------------------------------------------------
+ CASE Command: 
+
+The CASE statement goes through conditions and returns a value when the
+ first condition is met (like an IF-THEN-ELSE statement).
+ So, once a condition is true, it will stop reading and return the result.
+
+->  If no conditions are true, it returns the value in the ELSE clause.
+
+
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END;
+
+
+
+EG:  
+
+SELECT CustomerName, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    WHEN City IS NULL THEN Country
+    ELSE City
+END);
+
+If there is no ELSE part and no conditions are true, it returns NULL.
+
+------------------------------------------------------------------------------
+
+ROUND Command:
+
+-> Round command rounds the number to specified number of decimal places:
+
+Eg: SELECT ROUND(235.415, 2) AS RoundValue;
+
+CEIL Command:
+
+-> ciel command round the number to nearesr gretater number
+  ie. ciel(10.4)  ====> 11
+
+floor Command: 
+
+-> returns the largest number that is near or eqqaul to number
+  Eg :  floor(10.4)  ===>10
+
+_____----------------------------------------------------------------------
+
+If conidtion:
+
+--> if(marks >8 ,null,s.name)
+
+i.e if marks > 8 print s.name else print null
+
+**********
+Note: if there are two tables and no direcrt relation ship we can add them by
+
+  Eg:  from students  as s
+        join grades as g on s.marks  between g.min_mark and g.max_mark
+
+i.e if s.marks is in between min and max of g table then they join
+
+*********
+we can also order them by more than one condition 
+
+-> i.e we can order grade by desc and name  and marks 
+
+eg:  order by g.grade desc , s.name,s.marks
+
+
+Eg: refer to this for above
+
+   select if(g.grade < 8,null,s.name),g.grade,s.marks
+from students  as s
+join grades as g on s.marks  between g.min_mark and g.max_mark
+order by g.grade desc , s.name,s.marks
+
+
+_-----------------------------------------------------------------------------
+
+                              JOINS:
+
+-> basically the data is stored in multiple tables 
+
+-> for example, in the sample database, we have the orders and  orderdetails
+    tables that are linked using the orderNumber column:
+
+-> To get complete orders’ information, you need to query data from both
+    orders and  orderdetails tables.
+
+MySQL supports the following types of joins:
+
+1.Inner join
+2.Left join
+3.Right join
+4.Cross join
+
+-> MySQL hasn’t supported the FULL OUTER JOIN yet.
+
+               Inner Join:
+              ----------
+
+-> the inner join clause joins two tables based on a condition which is known
+    as a join predicate.
+
+Step 1: the inner join compares each row from the first table with every row on
+        the second table.
+
+Step 2: the inner join creates new row whose columns contain all the columns of the
+        two rows.
+
+Step 3: the inner join includes the result which matches from both tables.
+
+note :  we can use both = and using for condition
+note: both inner join and join are similar
+Eg:  
+
+SELECT 
+    m.member_id, 
+    m.name member, 
+    c.committee_id, 
+    c.name committee
+FROM
+    members m
+INNER JOIN committees c 
+	ON c.name = m.name;
+
+Eg:
+SELECT 
+    m.member_id, 
+    m.name member, 
+    c.committee_id, 
+    c.name committee
+FROM
+    members m
+INNER JOIN committees c USING(name);
+
+
+                                 LEFT JOIN :
+                              ------------------
+
+-> gives the result which is same from both tables and all the data from left table
+
+EG:
+SELECT 
+    m.member_id, 
+    m.name member, 
+    c.committee_id, 
+    c.name committee
+FROM
+    members m
+LEFT JOIN committees c USING(name);
+
+                                RIGHT JOIN:
+                               ----------------
+
+->> gives the result which is same from both tables and all the data from right table
+
+EG:
+SELECT 
+    m.member_id, 
+    m.name member, 
+    c.committee_id, 
+    c.name committee
+FROM
+    members m
+RIGHT JOIN committees c on c.name = m.name;
+
+                               CROSS JOIN:
+                            --------------------
+
+-> Unlike the inner join, left join, and right join, 
+    the cross join clause does not have a join condition.
+
+-> The cross join combines each row from the first table with every row
+     from the right table to make the result set.
+
+EG:
+
+SELECT 
+    m.member_id, 
+    m.name member, 
+    c.committee_id, 
+    c.name committee
+FROM
+    members m
+CROSS JOIN committees c;
+-----------------------------------------------------------------------
+
+                               Having Clause:
+
+-> having clause is only useful when u use it with group by clause
+
+EG:
+SELECT 
+    ordernumber,
+    SUM(quantityOrdered) AS itemsCount,
+    SUM(priceeach*quantityOrdered) AS total
+FROM
+    orderdetails
+GROUP BY 
+   ordernumber
+HAVING 
+   total > 1000;
+
+--------------------------------------------------------------------------
+ 
+-> Note : year() gives the yeear part of the date
+
+--------------------------------------------------------------------------
+                        Roll Up Clause:
+
+-> roll up is used when we  already group the  column and we want to group the 
+   column which is already grouped we use roll up 
+
+Eg: 
+
+-> first if we want to group a column we use
+
+   SELECT 
+    productline, 
+    SUM(orderValue) totalOrderValue
+FROM
+    sales
+GROUP BY 
+    productline;
+
+-> now if we want to group  the column  consiting of several similar elements we use
+  Union all
+
+SELECT 
+    productline, 
+    SUM(orderValue) totalOrderValue
+FROM
+    sales
+GROUP BY 
+    productline 
+UNION ALL
+SELECT 
+    NULL, 
+    SUM(orderValue) totalOrderValue
+FROM
+    sales;
+
+-> but this results in lenghty code and not efficient so we use roll up:
+
+SELECT 
+    productLine, 
+    orderYear,
+    SUM(orderValue) totalOrderValue
+FROM
+    sales
+GROUP BY 
+    productline, 
+    orderYear 
+WITH ROLLUP;
+
+-> this gives sum of grouped rows of simmilar elemnets 
+
+-------------------------------------------------------------------
+                   SubQuery :
+                 -----------
+-> subquery is a query nested within another query such 
+  as SELECT, INSERT, UPDATE or DELETE.
+
+-> A MySQL subquery is called an inner query while the query that contains the
+    subquery is called an outer query.
+
+Note : subquery runs first and compares it with main query
+
+Eg:
+
+ELECT 
+    lastName, firstName
+FROM
+    employees
+WHERE
+    officeCode IN (SELECT 
+            officeCode
+        FROM
+            offices
+        WHERE
+            country = 'USA');
+
+-> we can use comparison operators with sub query.
+
+Eg:
+  select customernumber,
+          checknumber,
+          amount
+  from paymnets
+  where amount = (select max(amount) from payments);
+
+--> ** if subquery generates more than one results then we can use in or not in clauses
+
+SELECT 
+    customerName
+FROM
+    customers
+WHERE
+    customerNumber NOT IN (SELECT DISTINCT
+            customerNumber
+        FROM
+            orders);
+
+--> subquery in from clause : it creates a temp table and reffers to it
+
+EG:
+
+SELECT 
+    MAX(items), 
+    MIN(items), 
+    FLOOR(AVG(items))
+FROM
+    (SELECT 
+        orderNumber, COUNT(orderNumber) AS items
+    FROM
+        orderdetails
+    GROUP BY orderNumber) AS lineitems;
+
+
+
+--------------------------------------------------------------------
+
+ Joining tables with composite key: 
+
+I have to join two tables. But in one table primary key is not there,
+composite primary key is there,means three columns put together uniquely define
+ a row of that table. I have those three columns in the other table too.
+rest nothing is common. Is there any way to join these two tables.
+please explain with the help of example
+
+
+SELECT * 
+FROM Table1
+INNER JOIN Table2
+ON Table1.Key1 = Table2.Key1 AND Table1.Key2 = Table2.Key2 AND Table1.Key3 = Table2.Key3
